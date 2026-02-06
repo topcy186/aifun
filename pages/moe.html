@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOE 模型架构 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>MOE：混合专家模型架构</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          MOE（Mixture of Experts）通过路由器选择少量专家子网络参与计算，
+          实现“参数规模大、计算成本可控”。
+        </p>
+        <ul>
+          <li>路由器根据输入决定激活的专家。</li>
+          <li>稀疏计算降低推理成本。</li>
+          <li>专家多样性提升模型表达能力。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["路由得分生成","选择 Top-2 专家","专家并行计算","聚合输出"]'>
+            <h3>专家路由模拟</h3>
+            <div class="anim-stage">
+              <div class="anim-experts">
+                <span data-steps="2">专家 A</span>
+                <span data-steps="2">专家 B</span>
+                <span>专家 C</span>
+                <span>专家 D</span>
+                <span data-steps="2">专家 E</span>
+                <span>专家 F</span>
+              </div>
+              <div class="anim-progress"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">只有被选中的专家参与当前计算。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["路由器打分","稀疏激活","梯度回传","专家更新"]'>
+            <h3>训练节拍</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-steps="1">Router</span>
+                <span class="anim-pill" data-steps="2">Sparse Compute</span>
+                <span class="anim-pill" data-steps="3">Backprop</span>
+                <span class="anim-pill" data-steps="4">Expert Update</span>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">路由器与专家共同学习分工。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">MOE 将“多专家协作”带入大模型时代。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

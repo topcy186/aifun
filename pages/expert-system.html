@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>专家系统 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>专家系统：知识库 + 推理引擎</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          专家系统把经验写成规则库，再通过推理引擎匹配事实和规则，形成结论与解释路径。
+          它强调知识显式化与可解释推理。
+        </p>
+        <ul>
+          <li>知识库存储“如果…那么…”规则。</li>
+          <li>推理机执行前向或后向推理。</li>
+          <li>解释模块输出决策依据。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["采集症状","匹配规则","合并证据","给出诊断"]'>
+            <h3>简化诊断链</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <div class="anim-node" data-steps="1">症状: 响应慢</div>
+                <div class="anim-node" data-steps="1">症状: 规则冲突</div>
+                <div class="anim-node" data-steps="2">规则匹配</div>
+                <div class="anim-node" data-steps="3">证据聚合</div>
+                <div class="anim-node" data-steps="4">诊断结果</div>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">规则链让推理过程可追溯。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["事实进入工作记忆","触发规则","更新结论","解释输出"]'>
+            <h3>推理引擎节拍</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-steps="1">事实库</span>
+                <span class="anim-pill" data-steps="2">规则引擎</span>
+                <span class="anim-pill" data-steps="3">结论队列</span>
+                <span class="anim-pill" data-steps="4">解释器</span>
+              </div>
+              <div class="anim-progress"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">每次触发后都会更新工作记忆。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">专家系统强调知识显式表达与可解释推理。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

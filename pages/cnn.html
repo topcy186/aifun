@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>CNN：卷积视野的特征捕捉</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          卷积神经网络通过局部感受野与共享权重提取空间特征，再经过池化与全连接层完成分类。
+          它让模型“看懂”图像中的纹理与形状。
+        </p>
+        <ul>
+          <li>卷积核扫描图像，提取局部特征。</li>
+          <li>池化降低维度，提升平移不变性。</li>
+          <li>多层堆叠形成层级特征。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["卷积核对齐","滑动到右侧","继续下移","生成特征图"]'>
+            <h3>卷积核滑动</h3>
+            <div class="anim-stage">
+              <div class="anim-grid cols-5">
+                <div class="anim-cell" data-steps="1"></div>
+                <div class="anim-cell" data-steps="1"></div>
+                <div class="anim-cell" data-steps="2"></div>
+                <div class="anim-cell" data-steps="2"></div>
+                <div class="anim-cell" data-steps="3"></div>
+                <div class="anim-cell" data-steps="3"></div>
+                <div class="anim-cell" data-steps="4"></div>
+                <div class="anim-cell" data-steps="4"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+              </div>
+              <div class="anim-pill" data-steps="4">输出特征图</div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">卷积核在图像上滑动提取局部纹理。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["卷积激活","池化压缩","层级堆叠","分类输出"]'>
+            <h3>层级特征流</h3>
+            <div class="anim-stage">
+              <div class="anim-bars">
+                <div class="anim-bar" data-steps="1"><span></span></div>
+                <div class="anim-bar" data-steps="2"><span></span></div>
+                <div class="anim-bar" data-steps="3"><span></span></div>
+                <div class="anim-bar" data-steps="4"><span></span></div>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">特征层级逐步聚合成高层语义。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">CNN 让计算机真正“看懂”了图像。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

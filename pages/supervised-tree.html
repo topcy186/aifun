@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>监督算法 · 树模型</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>监督算法：树模型的可解释性</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          决策树通过对特征进行逐层划分，把样本分到更纯净的子集。每条路径都是一串
+          “如果…那么…”规则，因此易于解释和诊断。
+        </p>
+        <ul>
+          <li>信息增益或基尼指数决定分裂特征。</li>
+          <li>树深度控制模型复杂度。</li>
+          <li>路径可读，便于业务解释。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["根节点","文本长度分裂","情感强度分裂","输出推荐"]'>
+            <h3>决策路径可视化</h3>
+            <div class="anim-stage">
+              <div class="anim-path">
+                <strong data-values='["根节点","根节点 → 文本长度","根节点 → 文本长度 → 情感强度","根节点 → 文本长度 → 情感强度 → 正向推荐"]'></strong>
+                <span class="anim-node" data-steps="2">短文本</span>
+                <span class="anim-node" data-steps="3">情感积极</span>
+                <span class="anim-node" data-steps="4">推荐内容</span>
+              </div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">路径越深，规则越具体。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["计算信息增益","选择特征","分裂样本","继续生长"]'>
+            <h3>分裂节拍</h3>
+            <div class="anim-stage">
+              <div class="anim-bars">
+                <div class="anim-bar" data-steps="1"><span></span></div>
+                <div class="anim-bar" data-steps="2"><span></span></div>
+                <div class="anim-bar" data-steps="3"><span></span></div>
+                <div class="anim-bar" data-steps="4"><span></span></div>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">特征选择决定树的方向。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">树模型在可解释性与性能之间取得良好平衡。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

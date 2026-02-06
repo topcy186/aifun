@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformer · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>Transformer：注意力驱动的并行建模</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          Transformer 通过自注意力机制捕捉序列任意位置的依赖关系，
+          并借助多头注意力并行处理不同语义线索。
+        </p>
+        <ul>
+          <li>自注意力让每个 token 关注关键上下文。</li>
+          <li>位置编码补足顺序信息。</li>
+          <li>堆叠层结构形成深层表达。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["关注上一词","关注主题词","关注谓语","融合上下文"]'>
+            <h3>注意力权重矩阵</h3>
+            <div class="anim-stage">
+              <div class="anim-matrix">
+                <span data-steps="1"></span><span data-steps="2"></span><span data-steps="3"></span><span data-steps="4"></span>
+                <span data-steps="2"></span><span data-steps="3"></span><span data-steps="4"></span><span data-steps="1"></span>
+                <span data-steps="3"></span><span data-steps="4"></span><span data-steps="1"></span><span data-steps="2"></span>
+                <span data-steps="4"></span><span data-steps="1"></span><span data-steps="2"></span><span data-steps="3"></span>
+              </div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">亮色方块代表当前高权重关注区域。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["多头并行","拼接结果","前馈网络","残差归一化"]'>
+            <h3>并行计算通道</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-node" data-steps="1">Head 1</span>
+                <span class="anim-node" data-steps="1">Head 2</span>
+                <span class="anim-node" data-steps="1">Head 3</span>
+                <span class="anim-node" data-steps="2">Concat</span>
+                <span class="anim-node" data-steps="3">FFN</span>
+                <span class="anim-node" data-steps="4">LayerNorm</span>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">多头注意力捕捉不同语义线索。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">Transformer 是大模型时代的关键架构。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

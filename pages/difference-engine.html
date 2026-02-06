@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>差分机 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>差分机：机械运算的曙光</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          差分机利用多列齿轮保存函数值和有限差分，通过机械传动完成“加法 → 进位 → 传递”循环，
+          自动生成数学表格。它把算法拆解为可被齿轮执行的步骤。
+        </p>
+        <ul>
+          <li>多列齿轮分别保存函数值、一次差分、二次差分。</li>
+          <li>手摇或动力输入驱动列与列之间的进位传递。</li>
+          <li>输出列随每次转动生成下一行表格结果。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["输入动力","一次差分叠加","进位传递","输出新函数值"]'>
+            <h3>差分列的机械迭代</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <div class="anim-column">
+                  <span class="anim-pill">函数值</span>
+                  <div class="anim-gear" data-steps="4"></div>
+                  <div class="anim-value" data-values='["256","273","291","310"]'></div>
+                </div>
+                <div class="anim-column">
+                  <span class="anim-pill">一次差分</span>
+                  <div class="anim-gear" data-steps="2"></div>
+                  <div class="anim-value" data-values='["17","18","19","19"]'></div>
+                </div>
+                <div class="anim-column">
+                  <span class="anim-pill">二次差分</span>
+                  <div class="anim-gear" data-steps="1,2"></div>
+                  <div class="anim-value" data-values='["1","1","1","1"]'></div>
+                </div>
+              </div>
+              <div class="anim-overlay"></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">观察差分列的数值如何逐步推动输出列增长。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["动力轴转动","齿轮传动","进位锁扣","输出刻度"]'>
+            <h3>动力流与输出刻度</h3>
+            <div class="anim-stage">
+              <div class="anim-column">
+                <div class="anim-gear" data-steps="1"></div>
+                <div class="anim-flow"><span data-progress></span></div>
+                <div class="anim-gear" data-steps="2,3"></div>
+              </div>
+              <div class="anim-node" data-steps="4">输出刻度盘 +1</div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">通过齿轮传动模拟差分机的能量流转。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">差分机揭示了“机械可以执行算法”的思想，为计算机时代奠基。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

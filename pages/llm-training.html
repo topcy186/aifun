@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大模型训练过程 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>大模型训练过程：数据、算力与策略</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          大模型训练覆盖数据清洗、分布式训练、评估与对齐等阶段，
+          需要数据工程、算力调度与优化策略协同推进。
+        </p>
+        <ul>
+          <li>数据管线：抓取、清洗、去重、分片。</li>
+          <li>训练管线：并行计算、梯度累积、混合精度。</li>
+          <li>对齐管线：指令微调、反馈强化学习。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["数据清洗","分布式训练","评估对齐","版本发布"]'>
+            <h3>训练流水线</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-node" data-steps="1">数据工程</span>
+                <span class="anim-node" data-steps="2">GPU 并行</span>
+                <span class="anim-node" data-steps="3">对齐评估</span>
+                <span class="anim-node" data-steps="4">发布迭代</span>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">每一步都依赖前一阶段输出。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["loss=2.4","loss=1.6","loss=1.1","loss=0.9"]'>
+            <h3>损失曲线趋势</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-values='["2.4","1.6","1.1","0.9"]'>2.4</span>
+                <span class="anim-pill">训练损失</span>
+              </div>
+              <div class="anim-progress"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">随着训练轮次增加，损失逐渐下降。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">训练大模型是一条跨越数据、算法与工程的长链路。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

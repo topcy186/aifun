@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELIZA · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>ELIZA：规则驱动的心理医生</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          ELIZA 通过关键字匹配和模板替换实现“似懂非懂”的对话效果，
+          用反问和引导式语句模仿心理咨询师的语气。
+        </p>
+        <ul>
+          <li>识别输入中的关键词。</li>
+          <li>匹配模板并重组句子。</li>
+          <li>强调引导用户继续表达。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["用户表达","关键词匹配","模板套用","输出反问"]'>
+            <h3>对话生成流程</h3>
+            <div class="anim-stage">
+              <div class="anim-chat">
+                <div class="bubble" data-values='["我最近压力很大。","我和父母沟通不顺。","我对工作很迷茫。","我感到疲惫。"]'></div>
+                <div class="bubble ai" data-values='["你说“压力”，能展开吗？","你和父母的关系如何？","你期待工作带来什么？","能说说让你疲惫的原因吗？"]'></div>
+              </div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">ELIZA 通过固定模板制造“理解”的错觉。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["检测关键词","替换句式","保持中立","引导继续"]'>
+            <h3>规则链拆解</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-steps="1">关键词库</span>
+                <span class="anim-pill" data-steps="2">模板库</span>
+                <span class="anim-pill" data-steps="3">中立语气</span>
+                <span class="anim-pill" data-steps="4">追问引导</span>
+              </div>
+              <div class="anim-progress"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">规则链决定回应的生成节奏。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">ELIZA 证明了结构化规则也能产生交互感。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

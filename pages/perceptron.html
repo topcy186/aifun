@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>感知机 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>感知机：最早的神经元模型</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          感知机把输入特征加权求和，再通过阈值函数输出类别。
+          它能学习线性可分问题，是神经网络的基础单元。
+        </p>
+        <ul>
+          <li>输入 → 加权求和 → 激活输出。</li>
+          <li>误差驱动权重更新。</li>
+          <li>受限于线性可分边界。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["输入向量","加权求和","对比阈值","输出类别"]'>
+            <h3>计算流程演示</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-steps="1">x1=0.4</span>
+                <span class="anim-pill" data-steps="1">x2=0.7</span>
+                <span class="anim-pill" data-steps="2">Σ=0.92</span>
+                <span class="anim-pill" data-steps="3">阈值=0.8</span>
+                <span class="anim-pill" data-steps="4">输出=1</span>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">通过阈值比较完成二分类判断。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["样本误差","权重调整","边界平移","重新评估"]'>
+            <h3>学习过程</h3>
+            <div class="anim-stage">
+              <div class="anim-bars">
+                <div class="anim-bar" data-steps="1"><span></span></div>
+                <div class="anim-bar" data-steps="2"><span></span></div>
+                <div class="anim-bar" data-steps="3"><span></span></div>
+                <div class="anim-bar" data-steps="4"><span></span></div>
+              </div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">误差驱动权重微调，调整决策边界。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">感知机让“学习”第一次成为可执行的算法。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

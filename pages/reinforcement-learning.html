@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>强化学习 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>强化学习：在奖励中迭代策略</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          强化学习通过智能体与环境互动来学习策略。智能体每走一步都会获得奖励，
+          然后更新价值函数或策略，让长期回报最大化。
+        </p>
+        <ul>
+          <li>核心要素：状态、动作、奖励、策略。</li>
+          <li>探索与利用的平衡关键。</li>
+          <li>适用于游戏、机器人、推荐系统。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["观察状态","选择动作","移动到新格","获得奖励"]'>
+            <h3>策略探索网格</h3>
+            <div class="anim-stage">
+              <div class="anim-grid cols-5">
+                <div class="anim-cell" data-steps="1"></div>
+                <div class="anim-cell" data-steps="2"></div>
+                <div class="anim-cell" data-steps="3"></div>
+                <div class="anim-cell" data-steps="4"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+                <div class="anim-cell"></div>
+              </div>
+              <div class="anim-pill" data-steps="4">奖励 +1</div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">智能体在网格中尝试不同动作。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["更新价值","策略改进","探索概率","稳定收敛"]'>
+            <h3>奖励驱动的更新</h3>
+            <div class="anim-stage">
+              <div class="anim-bars">
+                <div class="anim-bar" data-steps="1"><span></span></div>
+                <div class="anim-bar" data-steps="2"><span></span></div>
+                <div class="anim-bar" data-steps="3"><span></span></div>
+                <div class="anim-bar" data-steps="4"><span></span></div>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">奖励信号决定策略更新方向。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">强化学习通过试错让系统学会长期最优策略。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多模态对齐 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>多模态对齐：让不同感官共享语义</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          多模态对齐通过共享语义空间把图像、文本、语音映射到同一向量表示，
+          支持“看图说话”“以文搜图”等跨模态能力。
+        </p>
+        <ul>
+          <li>对比学习拉近相关样本距离。</li>
+          <li>联合编码器学习跨模态语义。</li>
+          <li>对齐质量决定下游任务能力。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["编码文本","编码图像","对比损失","语义对齐"]'>
+            <h3>对齐训练流程</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-node" data-steps="1">文本编码器</span>
+                <span class="anim-node" data-steps="2">视觉编码器</span>
+                <span class="anim-node" data-steps="3">对比损失</span>
+                <span class="anim-node" data-steps="4">共享空间</span>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">对比学习拉近正样本距离。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["文本主导","视觉主导","趋于平衡","稳定对齐"]'>
+            <h3>模态权重平衡</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <span class="anim-pill" data-values='["文本 70%","文本 40%","文本 50%","文本 50%"]'>文本 70%</span>
+                <span class="anim-pill" data-values='["视觉 30%","视觉 60%","视觉 50%","视觉 50%"]'>视觉 30%</span>
+              </div>
+              <div class="anim-progress"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">权重逐渐趋于平衡，形成共享语义。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">多模态对齐让模型拥有跨感官理解能力。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

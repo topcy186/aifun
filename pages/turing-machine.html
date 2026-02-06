@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图灵机 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>图灵机：可计算性的极简模型</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          图灵机由无限纸带、读写头与状态机组成。每一步读取纸带符号，
+          根据状态转移表决定“写入什么、移动方向、进入何种状态”。它定义了算法的本质。
+        </p>
+        <ul>
+          <li>纸带提供近似无限存储空间。</li>
+          <li>状态转移表描述完整程序逻辑。</li>
+          <li>停机状态表示计算结束。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="anim" data-steps='["读取符号 1","写入符号 0","向右移动","切换到状态 B"]'>
+            <h3>纸带读写节拍</h3>
+            <div class="anim-stage">
+              <div class="anim-grid cols-7">
+                <div class="anim-cell" data-values='["1","0","0","0"]'></div>
+                <div class="anim-cell" data-values='["1","1","1","1"]'></div>
+                <div class="anim-cell" data-values='["0","0","1","1"]'></div>
+                <div class="anim-cell" data-values='["1","1","1","1"]' data-steps="1,2"></div>
+                <div class="anim-cell" data-values='["0","0","0","1"]' data-steps="3"></div>
+                <div class="anim-cell" data-values='["1","1","1","1"]'></div>
+                <div class="anim-cell" data-values='["0","0","0","0"]'></div>
+              </div>
+              <div class="anim-row">
+                <span class="anim-pill is-active" data-steps="1,2">读写头</span>
+                <span class="anim-pill" data-steps="3">向右移动</span>
+              </div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">读写头在纸带上移动并更新符号。</p>
+          </article>
+          <article class="interactive-card" data-widget="anim" data-steps='["状态 A","匹配 1","写 0 并右移","状态 B"]'>
+            <h3>状态机切换</h3>
+            <div class="anim-stage">
+              <div class="anim-row">
+                <div class="anim-node" data-steps="1,2">状态 A</div>
+                <div class="anim-node" data-steps="3">动作: 写 0 →</div>
+                <div class="anim-node" data-steps="4">状态 B</div>
+              </div>
+              <div class="anim-flow"><span data-progress></span></div>
+            </div>
+            <div class="anim-row">
+              <span class="step-label" data-step-label></span>
+              <span class="note" data-step-count></span>
+            </div>
+            <div class="controls">
+              <button data-action="start">开始</button>
+              <button data-action="pause">暂停</button>
+              <button data-action="reset">结束</button>
+            </div>
+            <p class="note">状态转移表决定下一步动作。</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">图灵机让“算法”从概念走向精确定义。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>
