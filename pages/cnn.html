@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>CNN：卷积视野的特征捕捉</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          卷积神经网络通过局部感受野与共享权重提取空间特征，再经过池化与全连接层进行分类。
+          它在视觉识别、医学影像等场景中拥有强大表现。
+        </p>
+        <ul>
+          <li>卷积核扫描图像，捕捉纹理与边缘。</li>
+          <li>池化层降低维度，增强平移不变性。</li>
+          <li>多层堆叠形成层级特征。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="slider">
+            <h3>卷积核强度</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="slider-control">
+              <label>滤波强度：<span data-slider-value></span></label>
+              <input type="range" min="10" max="90" value="40" />
+            </div>
+            <p class="note">强度越高，边缘响应越明显。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>层级特征流</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["输入图像","卷积提特征","池化压缩","全连接分类"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>下一层</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">CNN 让计算机真正“看懂”了图像。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

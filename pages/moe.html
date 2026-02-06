@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOE 模型架构 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>MOE：混合专家模型架构</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          MOE（Mixture of Experts）通过路由器选择少量专家子网络参与计算，
+          实现“参数规模大、计算成本可控”。它是大模型扩展的重要方向之一。
+        </p>
+        <ul>
+          <li>路由器根据输入决定激活的专家。</li>
+          <li>稀疏计算降低推理成本。</li>
+          <li>专家多样性提升模型表达能力。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="moe">
+            <h3>专家路由模拟</h3>
+            <div class="viz">
+              <div class="moe-experts">
+                <span>专家 A</span>
+                <span>专家 B</span>
+                <span>专家 C</span>
+                <span>专家 D</span>
+                <span>专家 E</span>
+                <span>专家 F</span>
+              </div>
+            </div>
+            <div class="controls">
+              <button>重新路由</button>
+            </div>
+            <p class="note">被点亮的专家参与当前计算。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>训练节拍</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["分配专家","并行前向","聚合输出","反向更新"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>下一步</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">MOE 将“多专家协作”带入大模型时代。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

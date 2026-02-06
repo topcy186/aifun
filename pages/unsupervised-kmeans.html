@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无监督算法 · K-Means</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>无监督算法：以 K-Means 为例</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          K-Means 通过迭代方式将样本划分到 K 个簇中：先随机初始化中心点，
+          再反复执行“分配样本 → 更新中心”。它揭示了数据内在结构。
+        </p>
+        <ul>
+          <li>无标签数据的自动分组。</li>
+          <li>迭代优化簇内距离。</li>
+          <li>适合探索用户画像、市场分群。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="kmeans">
+            <h3>聚类分配</h3>
+            <div class="viz">
+              <div class="kmeans-dots">
+                <span class="cluster-a"></span><span class="cluster-b"></span><span class="cluster-c"></span>
+                <span class="cluster-b"></span><span class="cluster-a"></span><span class="cluster-c"></span>
+                <span class="cluster-c"></span><span class="cluster-b"></span><span class="cluster-a"></span>
+                <span class="cluster-a"></span><span class="cluster-c"></span><span class="cluster-b"></span>
+                <span class="cluster-b"></span><span class="cluster-a"></span><span class="cluster-c"></span>
+                <span class="cluster-c"></span><span class="cluster-b"></span><span class="cluster-a"></span>
+              </div>
+            </div>
+            <div class="controls">
+              <button>重新分配簇</button>
+            </div>
+            <p class="note">颜色代表当前簇归属。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>迭代流程</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["初始化中心","分配样本","更新中心","收敛检查"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>执行迭代</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">K-Means 用简单迭代揭示数据的结构性规律。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

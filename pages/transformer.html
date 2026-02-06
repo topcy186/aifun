@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformer · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>Transformer：注意力驱动的并行建模</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          Transformer 通过自注意力机制捕捉序列任意位置的依赖关系，
+          同时使用多头注意力并行建模，显著提升训练效率与表达能力。
+        </p>
+        <ul>
+          <li>自注意力让每个 token 关注关键上下文。</li>
+          <li>位置编码补足顺序信息。</li>
+          <li>堆叠编码器/解码器形成深层结构。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="attention">
+            <h3>注意力热点</h3>
+            <div class="viz">
+              <div class="attention-grid">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="controls">
+              <button>刷新注意力</button>
+            </div>
+            <p class="note">亮色区域代表高注意力权重。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>并行层级</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["嵌入输入","多头注意力","前馈网络","残差连接"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>下一层</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">Transformer 是大模型时代的关键架构。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>
