@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大模型训练过程 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>大模型训练过程：数据、算力与策略</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          大模型训练需要清洗大规模语料、设计高效优化器与分布式训练框架，
+          并在预训练后通过对齐与微调让模型更懂人类需求。
+        </p>
+        <ul>
+          <li>数据管线：抓取、清洗、去重、分片。</li>
+          <li>训练管线：并行计算、梯度累积、混合精度。</li>
+          <li>对齐管线：指令微调、反馈强化学习。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="progress">
+            <h3>训练进度条</h3>
+            <div class="viz">
+              <div class="progress-track"><span></span></div>
+            </div>
+            <div class="controls">
+              <button>推进 Epoch</button>
+            </div>
+            <p class="note">每次推进模拟一次训练轮次。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>训练流水线</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["数据清洗","分布式训练","评估与对齐","发布与迭代"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>查看阶段</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">训练大模型是一条跨越数据、算法与工程的长链路。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

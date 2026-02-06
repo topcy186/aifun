@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>强化学习 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>强化学习：在奖励中迭代策略</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          强化学习通过智能体与环境的交互来学习策略。智能体执行动作获得奖励，
+          再通过价值函数或策略梯度更新决策，让长期回报最大化。
+        </p>
+        <ul>
+          <li>核心元素：状态、动作、奖励、策略。</li>
+          <li>探索与利用的平衡非常关键。</li>
+          <li>常见应用：游戏、机器人控制、推荐系统。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="grid">
+            <h3>策略探索网格</h3>
+            <div class="viz">
+              <div class="grid-world">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="controls">
+              <button>执行一步</button>
+            </div>
+            <p class="note">绿色格子代表当前智能体位置。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>奖励更新</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["观察状态","选择动作","获得奖励","更新策略"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>更新一次</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">强化学习通过试错让系统学会长期最优策略。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

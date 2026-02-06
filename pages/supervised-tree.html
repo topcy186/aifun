@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>监督算法 · 树模型</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>监督算法：树模型的可解释性</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          决策树通过对特征进行二分或多分划分，把样本逐层切分成更纯净的类别。每一个节点都对应“如果…那么…”
+          的判断，使其天然具备可解释性。
+        </p>
+        <ul>
+          <li>信息增益或基尼系数决定分裂特征。</li>
+          <li>树深度控制模型复杂度。</li>
+          <li>可与集成方法结合形成随机森林或梯度提升树。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="tree">
+            <h3>路径可视化</h3>
+            <div class="viz">
+              <div class="tree">
+                <div class="highlight" data-tree-path>根节点 → 文本长度 → 情感强度 → 正向推荐</div>
+                <div>分支 1：短文本</div>
+                <div>分支 2：长文本</div>
+              </div>
+            </div>
+            <div class="controls">
+              <button>切换路径</button>
+            </div>
+            <p class="note">决策树提供清晰的推理路线。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>分裂节拍</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["计算信息增益","选择最佳特征","创建子节点","继续分裂"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>下一层</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">树模型在可解释性与性能之间取得良好平衡。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

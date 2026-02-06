@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>感知机 · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>感知机：最早的神经元模型</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          感知机将输入特征加权求和，再通过阈值函数输出类别。它能够学习线性可分问题，
+          是多层神经网络的基础。
+        </p>
+        <ul>
+          <li>线性加权求和 + 激活函数。</li>
+          <li>使用误差驱动的权重更新。</li>
+          <li>受限于线性可分。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="slider">
+            <h3>阈值调节</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="slider-control">
+              <label>当前阈值：<span data-slider-value></span></label>
+              <input type="range" min="10" max="90" value="50" />
+            </div>
+            <p class="note">阈值越高，激活越谨慎。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>学习过程</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["输入样本","计算误差","更新权重","重新分类"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>训练一步</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">感知机让“学习”第一次成为可实现的算法。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>

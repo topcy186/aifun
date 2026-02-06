@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELIZA · 趣说智能简史</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>ELIZA：规则驱动的心理医生</h1>
+        <a href="../index.html">← 返回时间线</a>
+      </header>
+
+      <section class="section">
+        <h2>原理速览</h2>
+        <p>
+          ELIZA 是 1960 年代的对话系统，通过关键字匹配与模板替换模拟心理治疗师的提问方式。
+          虽然并不理解语义，但它让人们第一次感受到机器也能“倾听”。
+        </p>
+        <ul>
+          <li>关键字匹配触发回应模板。</li>
+          <li>大量使用反问和引导式句式。</li>
+          <li>揭示了人类对话中的心理投射效应。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>动画/互动展示区</h2>
+        <div class="interactive-grid">
+          <article class="interactive-card" data-widget="eliza">
+            <h3>体验 ELIZA 对话</h3>
+            <div class="viz">
+              <div class="chat-box">
+                <div class="chat-bubble ai" data-eliza-output>你好，我在听。你想聊些什么？</div>
+              </div>
+            </div>
+            <div class="controls">
+              <input type="text" placeholder="输入你的感受" />
+              <button>发送</button>
+            </div>
+            <p class="note">试试输入“压力”“父母”“工作”等关键词。</p>
+          </article>
+          <article class="interactive-card">
+            <h3>规则模板链</h3>
+            <div class="viz" data-state="idle">
+              <div class="pulse"></div>
+            </div>
+            <div class="stepper" data-widget="stepper" data-steps='["检测关键词","匹配回应模板","重组句式","输出反问"]'>
+              <span class="step-index" data-step-index></span>
+              <p data-step-text></p>
+              <button data-step-btn>查看流程</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">ELIZA 证明了“结构化语言规则”也能产生交互感。</p>
+    </main>
+    <script src="../scripts.js"></script>
+  </body>
+</html>
